@@ -8,7 +8,8 @@ void getTemp_and_Humi(){
 
     // Check if any reads failed and exit early (to try again).
     if ( isnan(temp_h) || isnan(temp_t) || temp_t>100 ) {
-        debug_println(F("Failed to read from DHT sensor!"));    
+        debug_println(F("Failed to read from DHT sensor!"));
+        digitalWrite(POWER_LED, LOW);
         return;
     }
     curent_temp = (int)temp_t;
