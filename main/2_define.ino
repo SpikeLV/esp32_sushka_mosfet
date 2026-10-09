@@ -4,13 +4,9 @@
 #if DEBUG == 1
 #define debug_print(x) debug.print(x)
 #define debug_println(x) debug.println(x)
-#define NET_SSID "Do-You-24-2"
-#define NET_PASSWORD "Moon413157"
 #else
 #define debug_print(x)
 #define debug_println(x)
-#define NET_SSID "TomyLimon"
-#define NET_PASSWORD "Moon413157" 
 #endif
 
 // devices status
@@ -27,17 +23,18 @@
 
 #define TRASHOLE_MIN 3
 
-#define VENT_PIN 16
-#define HEATER_PIN 17
+#define HEATER_PIN 17       // MOSFET1
+#define VENT_PIN 18         // MOSFET2
+#define MOSFET3_PIN 26      // MOSFET3
+#define MOSFET4_PIN 27      // MOSFET4
 
 // temperature and humidity AM2305
-#define DHTPIN 26
+#define DHTPIN 14
 #define DHTTYPE DHT22
 
-// Serial2 for Display
+// UART1 for Display
 #define NEXTION_RX 35  // Connect to Nextion TX
 #define NEXTION_TX 32  // Connect to Nextion RX
-
 
 // 1 while the dryer cycle is running, 0 when idle or stopped
 #define POWER_LED 23
