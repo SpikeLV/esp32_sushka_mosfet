@@ -27,13 +27,18 @@
 
 #define TRASHOLE_MIN 3
 
-#define HEATER_PIN 14
-#define VENT_PIN 27
+#define HEATER_PIN 16
+#define VENT_PIN 17
+
+// 1 while the dryer cycle is running, 0 when idle or stopped
+#define DEVICE_PIN 23
+#define DEVICE_ON 1
+#define DEVICE_OFF 0
 
 // temperature and humidity AM2305
 #define DHTPIN 15
 #define DHTTYPE DHT22
 
-// Serial2 for Display
-#define NEXTION_RX 16  // Connect to Nextion TX
-#define NEXTION_TX 17  // Connect to Nextion RX
+// UART1 for Display
+#define NEXTION_RX 33  // Connect to Nextion TX
+#define NEXTION_TX 32  // Connect to Nextion RX

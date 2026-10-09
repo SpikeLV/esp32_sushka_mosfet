@@ -2,9 +2,9 @@ HardwareSerial nextionSerial(1);
 
 void setup() {
     debug.begin(115200);
-    debug_println("Shkaf R.022"); // relay for ventilation and heating logic
+    debug_println("Shkaf R.032-mosfet"); // relay for ventilation and heating logic
     
-    //Serial2.begin(9600); // pins 16 rx2, 17 tx2, 19200 bps, 8 bits no parity 1 stop bit
+    //Serial2.begin(9600); // pins 33 rx, 32 tx, 9600 bps, 8 bits no parity 1 stop bit
 
     nextionSerial.begin(9600, SERIAL_8N1, NEXTION_RX, NEXTION_TX);
     
@@ -59,6 +59,7 @@ void loop() {
         debug.println(nextion_action_timer);
 
         action_status = STARTING;
+        digitalWrite(DEVICE_PIN, DEVICE_ON);
         debug.println("STARTING");
     }
     if(nextion_action.indexOf("STOPPING") != -1){
@@ -132,6 +133,7 @@ void loop() {
     if( action_status == STOPPING ){
         setRelayStatus(VENT_PIN, RELAY_OFF);
         setRelayStatus(HEATER_PIN, RELAY_OFF);
+        digitalWrite(DEVICE_PIN, DEVICE_OFF);
         heater_status = RELAY_OFF;
         action_status = STOPPED;
         dispay_sec = 0;

@@ -1,8 +1,8 @@
 #include "HardwareSerial.h"
 
 // Define the hardware serial port for Nextion
-#define NEXTION_RX 16  // Connect to Nextion TX
-#define NEXTION_TX 17  // Connect to Nextion RX
+#define NEXTION_RX 33  // Connect to Nextion TX
+#define NEXTION_TX 32  // Connect to Nextion RX
 
 // Create a serial instance for the Nextion display
 HardwareSerial nextionSerial(1);
